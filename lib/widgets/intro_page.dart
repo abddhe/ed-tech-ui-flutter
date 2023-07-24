@@ -6,7 +6,8 @@ class IntroPage extends StatelessWidget {
   final String title;
   final String body;
   final VoidCallback onPressed;
-  final VoidCallback skip;
+  final VoidCallback? skip;
+  final bool isLast;
 
   const IntroPage({
     super.key,
@@ -14,7 +15,8 @@ class IntroPage extends StatelessWidget {
     required this.title,
     required this.body,
     required this.onPressed,
-    required this.skip,
+    this.skip,
+    this.isLast = false,
   });
 
   @override
@@ -27,16 +29,19 @@ class IntroPage extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: skip,
-            child: SizedBox(
-              width: double.infinity,
-              child: Text(
-                "Skip",
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: kDarkGreyColor,
+            child: isLast
+                ? const SizedBox( width: double.infinity,
+            height: 15.0,)
+                : SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      "Skip",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: kDarkGreyColor,
+                          ),
+                      textAlign: TextAlign.end,
                     ),
-                textAlign: TextAlign.end,
-              ),
-            ),
+                  ),
           ),
           Column(
             children: [
@@ -47,7 +52,7 @@ class IntroPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 width: 230,
                 child: Text(
-                 title ,
+                  title,
                   style: Theme.of(context).textTheme.labelSmall!.copyWith(
                         color: kDarkColor,
                         fontSize: 25.0,
@@ -82,7 +87,7 @@ class IntroPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(
-                  "Next",
+                  isLast? "Let's Start" :"Next",
                   style: Theme.of(context).textTheme.labelSmall!.copyWith(
                         color: kWhiteColor,
                         fontSize: 20.0,
