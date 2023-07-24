@@ -1,4 +1,5 @@
 import 'package:ed_tech/constants.dart';
+import 'package:ed_tech/screens/home_screen.dart';
 import 'package:ed_tech/screens/signup_screen.dart';
 import 'package:ed_tech/widgets/password_input.dart';
 import 'package:ed_tech/widgets/primaryButton.dart';
@@ -15,8 +16,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,9 +142,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-
                 ),
-                PrimaryButton(title: "Log in", onPressed: (){}),
+                PrimaryButton(
+                    title: "Log in",
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(HomeScreen.screenRoute);
+                    }),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushNamed(SignupScreen.screenRoute);
@@ -156,14 +159,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       "Sign up",
                       style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                        color: kDarkGreyColor,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                            color: kDarkGreyColor,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                       textAlign: TextAlign.center,
                     ),
                   ),
-
                 ),
               ],
             ),
