@@ -1,5 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:ed_tech/constants.dart';
+import 'package:ed_tech/screens/login_screen.dart';
+import 'package:ed_tech/screens/onboarding_screen.dart';
+import 'package:ed_tech/screens/signup_screen.dart';
 import 'package:ed_tech/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,23 +33,13 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.rubik().fontFamily,
         textTheme: GoogleFonts.rubikTextTheme(),
       ),
-      home: const SplashScreen(),
-    );
-  }
-}
-
-//
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text("HI"),
-        ),
-      ),
+      initialRoute: SplashScreen.screenRoute,
+      routes: {
+        SplashScreen.screenRoute: (context) => const SplashScreen(),
+        OnBoardingScreen.screenRoute: (context) => const OnBoardingScreen(),
+        LoginScreen.screenRoute: (context) => const LoginScreen(),
+        SignupScreen.screenRoute: (context) => const SignupScreen(),
+      },
     );
   }
 }
