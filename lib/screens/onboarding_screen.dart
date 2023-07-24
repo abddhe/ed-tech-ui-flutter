@@ -38,10 +38,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 body:
                     "Quarantine is the perfect time to spend your day learning something new, from anywhere!",
                 onPressed: () {
-                  _controller.jumpToPage(1);
+                  _controller.animateToPage(1,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn);
                 },
                 skip: () {
-                  _controller.jumpToPage(lastPageIndex-1);
+                  _controller.jumpToPage(lastPageIndex - 1);
                 },
               ),
               IntroPage(
@@ -50,10 +52,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 body:
                     "Quarantine is the perfect time to spend your day learning something new, from anywhere!",
                 onPressed: () {
-                  _controller.jumpToPage(2);
+                  _controller.animateToPage(2,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn);
                 },
                 skip: () {
-                  _controller.jumpToPage(lastPageIndex-1);
+                  _controller.jumpToPage(lastPageIndex - 1);
                 },
               ),
               IntroPage(
@@ -62,7 +66,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 body:
                     "Quarantine is the perfect time to spend your day learning something new, from anywhere!",
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed(LoginScreen.screenRoute);
+                  Navigator.of(context)
+                      .pushReplacementNamed(LoginScreen.screenRoute);
                 },
                 isLast: true,
               ),
@@ -72,7 +77,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             bottom: 150,
             child: SmoothPageIndicator(
               onDotClicked: (index) {
-                _controller.jumpToPage(index);
+                _controller.animateToPage(index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn);
               },
               effect: ExpandingDotsEffect(
                 spacing: 8,
