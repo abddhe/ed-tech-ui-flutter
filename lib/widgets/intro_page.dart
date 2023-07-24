@@ -1,4 +1,5 @@
 import 'package:ed_tech/constants.dart';
+import 'package:ed_tech/widgets/primaryButton.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
@@ -74,29 +75,7 @@ class IntroPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-              onPressed: onPressed,
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text(
-                  isLast? "Let's Start" :"Next",
-                  style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                        color: kWhiteColor,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ),
-            ),
-          ),
+          PrimaryButton(title:  isLast? "Let's Start" :"Next", onPressed: onPressed),
         ],
       ),
     );
