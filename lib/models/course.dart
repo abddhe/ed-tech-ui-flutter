@@ -4,7 +4,7 @@ class Course {
   final String shortDescription;
   final String description;
   final double price;
-  final String time;
+  final String duration;
   final String category;
 
   Course( {
@@ -14,6 +14,6 @@ class Course {
     required this.description,
     required this.price,
     required this.category,
-    required this.time,
+    required this.duration,
   });
 }
