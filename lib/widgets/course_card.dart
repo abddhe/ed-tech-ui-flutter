@@ -1,9 +1,11 @@
 import 'package:ed_tech/constants.dart';
+import 'package:ed_tech/models/course.dart';
 import 'package:ed_tech/widgets/badge_widget.dart';
 import 'package:flutter/material.dart';
 
 class CourseCard extends StatelessWidget {
-  const CourseCard({super.key});
+  final Course course;
+  const CourseCard({super.key, required this.course});
 
   @override
   Widget build(BuildContext context) {
