@@ -1,5 +1,7 @@
+import 'package:ed_tech/app_data.dart';
 import 'package:ed_tech/constants.dart';
 import 'package:ed_tech/widgets/badge_widget.dart';
+import 'package:ed_tech/widgets/course_card.dart';
 import 'package:ed_tech/widgets/search_input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +16,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             Padding(
@@ -81,10 +86,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               BadgeWidget(text: "#UX"),
                               BadgeWidget(text: "#Swift"),
                               BadgeWidget(text: "#UI"),
-                              BadgeWidget(text: "#css"),
-                              BadgeWidget(text: "#css"),
-                              BadgeWidget(text: "#css"),
-                              BadgeWidget(text: "#css"),
                             ],
                           ),
                         ),
@@ -94,12 +95,48 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: kDefaultPadding,
                   ),
-
                 ],
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: kDefaultPadding,
+                ),
+                itemBuilder: (context, index) =>
+                    CourseCard(course: coursesList[index]),
+                itemCount: coursesList.length,
               ),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: kWhiteColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.0),
+            topRight: Radius.circular(20.0),
+          ),
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: kWhiteColor,
+
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark_add), label: "Course"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "Settings"),
+          ],
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
+
       ),
     );
   }
