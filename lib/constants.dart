@@ -10,3 +10,5 @@ const kDarkGreyColor = Color(0xFF78746D);
 const kGreyColor = Color(0xFFBEBAB3);
 const kLightGreyColor = Color(0xFFF8F2EE);
 const kWhiteColor = Color(0xFFFFFFFF);
+
+const kDefaultPadding = 20.0;
