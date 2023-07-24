@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:ed_tech/constants.dart';
 import 'package:ed_tech/main.dart';
+import 'package:ed_tech/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  static const String screenRoute = "/splash";
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -16,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 5),(){
-      Navigator.of(context).push(MaterialPageRoute(builder: (_)=> MainScreen()));
+      Navigator.of(context).pushReplacementNamed(OnBoardingScreen.screenRoute);
     });
   }
   @override
