@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
   final String text;
-  const SearchInput({super.key, required this.text,});
+  final VoidCallback onPressed;
+
+  const SearchInput({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
         suffixIcon: GestureDetector(
-
+          onTap: onPressed,
           child: const Icon(
             Icons.search,
             size: 30.0,
