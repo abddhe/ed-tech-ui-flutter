@@ -11,89 +11,93 @@ class CoursePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(kDefaultPadding),
-      child: Column(
-        children: [
-          ListTile(
-            contentPadding: const EdgeInsets.all(0.0),
-            title: Text(
-              "Hello,",
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: kDarkColor,
-                  ),
-            ),
-            subtitle: Text(
-              "Abdullah Dheir",
-              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                    color: kDarkColor,
-                    fontWeight: FontWeight.w900,
-                  ),
-            ),
-            trailing: Container(
-              width: 50,
-              height: 50,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: kGreyColor,
-                ),
-              ),
-              child: const Icon(
-                CupertinoIcons.bell,
-                color: kDarkColor,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: kDefaultPadding,
-          ),
-          Column(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(kDefaultPadding),
+          child: Column(
             children: [
-              SearchInput(
-                text: "Search course",
-                onPressed: () {},
+              ListTile(
+                contentPadding: const EdgeInsets.all(0.0),
+                title: Text(
+                  "Hello,",
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        color: kDarkColor,
+                      ),
+                ),
+                subtitle: Text(
+                  "Abdullah Dheir",
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                        color: kDarkColor,
+                        fontWeight: FontWeight.w900,
+                      ),
+                ),
+                trailing: Container(
+                  width: 50,
+                  height: 50,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: kGreyColor,
+                    ),
+                  ),
+                  child: const Icon(
+                    CupertinoIcons.bell,
+                    color: kDarkColor,
+                  ),
+                ),
               ),
               const SizedBox(
                 height: kDefaultPadding,
               ),
-              Row(
+              Column(
                 children: [
-                  Text(
-                    "Category:",
-                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                          fontSize: 17.0,
-                        ),
+                  SearchInput(
+                    text: "Search course",
+                    onPressed: () {},
                   ),
-                  const Expanded(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          BadgeWidget(text: "#CSS"),
-                          BadgeWidget(text: "#UX"),
-                          BadgeWidget(text: "#Swift"),
-                          BadgeWidget(text: "#UI"),
-                        ],
+                  const SizedBox(
+                    height: kDefaultPadding,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Category:",
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              fontSize: 17.0,
+                            ),
                       ),
-                    ),
+                      const Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              BadgeWidget(text: "#CSS"),
+                              BadgeWidget(text: "#UX"),
+                              BadgeWidget(text: "#Swift"),
+                              BadgeWidget(text: "#UI"),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: kDefaultPadding,
                   ),
                 ],
               ),
-              const SizedBox(
-                height: kDefaultPadding,
+              Expanded(
+                child: ListView.builder(
+                  itemBuilder: (context, index) =>
+                      CourseCard(course: coursesList[index]),
+                  itemCount: coursesList.length,
+                ),
               ),
             ],
           ),
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) =>
-                  CourseCard(course: coursesList[index]),
-              itemCount: coursesList.length,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
