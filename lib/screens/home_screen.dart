@@ -1,5 +1,6 @@
 import 'package:ed_tech/constants.dart';
 import 'package:ed_tech/pages/course_page.dart';
+import 'package:ed_tech/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _tabBarChildren = const [
     CoursePage(),
-    Text("Profile"),
+    ProfilePage(),
     Text("Setting"),
   ];
 
