@@ -12,7 +12,7 @@ class YourCoursesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(title: "Your Courses"),
+      appBar: const AppBarWidget(title: "Your Courses"),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(kDefaultPadding),
