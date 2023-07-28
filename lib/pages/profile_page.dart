@@ -1,5 +1,6 @@
 import 'package:ed_tech/constants.dart';
 import 'package:ed_tech/screens/login_screen.dart';
+import 'package:ed_tech/screens/your_courses_screen.dart';
 import 'package:ed_tech/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +40,7 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(
                 height: kDefaultPadding + 10,
               ),
-              ProfilePageContainer(text: "Your Courses", onPressed: () => Navigator.of(context).pushNamed()),
+              ProfilePageContainer(text: "Your Courses", onPressed: () => Navigator.of(context).pushNamed(YourCoursesScreen.screenRoute)),
               ProfilePageContainer(text: "Saved", onPressed: () {}),
               ProfilePageContainer(text: "Payment", onPressed: () {}),
               TextButton(
