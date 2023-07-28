@@ -1,4 +1,4 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:ed_tech/app_data.dart';
 import 'package:ed_tech/constants.dart';
 import 'package:ed_tech/screens/course_details_screen.dart';
 import 'package:ed_tech/screens/home_screen.dart';
@@ -35,14 +35,17 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.rubik().fontFamily,
         textTheme: GoogleFonts.rubikTextTheme(),
       ),
-      initialRoute: SplashScreen.screenRoute,
+      initialRoute: currentUser != null
+          ? HomeScreen.screenRoute
+          : SplashScreen.screenRoute,
       routes: {
         SplashScreen.screenRoute: (context) => const SplashScreen(),
         OnBoardingScreen.screenRoute: (context) => const OnBoardingScreen(),
         LoginScreen.screenRoute: (context) => const LoginScreen(),
         SignupScreen.screenRoute: (context) => const SignupScreen(),
         HomeScreen.screenRoute: (context) => const HomeScreen(),
-        CourseDetailsScreen.screenRoute: (context) => const CourseDetailsScreen(),
+        CourseDetailsScreen.screenRoute: (context) =>
+            const CourseDetailsScreen(),
       },
     );
   }
