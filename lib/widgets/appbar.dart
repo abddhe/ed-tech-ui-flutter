@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const AppBarWidget({Key? key, required this.title}) : super(key: key);
+  final VoidCallback? onPressed;
+  const AppBarWidget({
+    Key? key,
+    this.title = "",
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(75);
@@ -17,7 +22,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: const EdgeInsets.all(kDefaultPadding),
         child: GestureDetector(
-          onTap: () {},
+          onTap: onPressed,
           child: Container(
             width: double.infinity,
             height: double.infinity,
@@ -39,9 +44,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         title,
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-          color: kDarkColor,
-          fontWeight: FontWeight.bold,
-        ),
+              color: kDarkColor,
+              fontWeight: FontWeight.bold,
+            ),
       ),
       centerTitle: true,
     );
