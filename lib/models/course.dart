@@ -7,7 +7,7 @@ class Course {
   final String duration;
   final String category;
 
-  Course( {
+  const Course( {
     required this.title,
     required this.imageURL,
     required this.shortDescription,
