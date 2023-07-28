@@ -6,6 +6,7 @@ import 'package:ed_tech/screens/login_screen.dart';
 import 'package:ed_tech/screens/onboarding_screen.dart';
 import 'package:ed_tech/screens/signup_screen.dart';
 import 'package:ed_tech/screens/splash_screen.dart';
+import 'package:ed_tech/screens/your_courses_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.screenRoute: (context) => const HomeScreen(),
         CourseDetailsScreen.screenRoute: (context) =>
             const CourseDetailsScreen(),
+        YourCoursesScreen.screenRoute: (context) => const YourCoursesScreen(),
       },
     );
   }
