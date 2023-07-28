@@ -1,5 +1,6 @@
 import "package:ed_tech/app_data.dart";
 import "package:ed_tech/constants.dart";
+import "package:ed_tech/screens/course_details_screen.dart";
 import "package:ed_tech/widgets/badge_widget.dart";
 import "package:ed_tech/widgets/course_card.dart";
 import "package:ed_tech/widgets/search_input.dart";
@@ -91,7 +92,9 @@ class CoursePage extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) =>
-                      CourseCard(course: currentUser.courses[index]),
+                      CourseCard(course: currentUser.courses[index],onPressed: (){
+                        Navigator.of(context).pushNamed(CourseDetailsScreen.screenRoute,arguments: currentUser.courses[index]);
+                      },),
                   itemCount: coursesList.length,
                 ),
               ),
