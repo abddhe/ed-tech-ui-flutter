@@ -32,14 +32,14 @@ class CourseCard extends StatelessWidget {
                   width: double.infinity,
                   height: 250.0,
                   child: Image.asset(
-                    "assets/images/UI.png",
+                    course.imageURL,
                   ),
                 ),
-                 const Positioned(
+                 Positioned(
                   bottom: 20,
                   right: 20,
                   child: BadgeWidget(
-                    text: "\$ 50",
+                    text: "\$ ${course.price}",
                   ),
                 ),
               ],
@@ -51,7 +51,7 @@ class CourseCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "3 h 30 min",
+                    course.duration,
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
@@ -63,7 +63,7 @@ class CourseCard extends StatelessWidget {
                     height: kDefaultPadding,
                   ),
                   Text(
-                    "UI",
+                    course.title,
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall!
@@ -76,7 +76,7 @@ class CourseCard extends StatelessWidget {
                     height: kDefaultPadding,
                   ),
                   Text(
-                    "Advanced mobile Interface design",
+                    course.shortDescription,
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
