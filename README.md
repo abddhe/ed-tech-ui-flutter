@@ -1,6 +1,10 @@
-# Ed Tech Application
+# Ed Tech App
 
-A new Flutter project.
+Is a education application introduce a many of course.
+
+The users can be buy these courses and learned inside app.
+
+![Ed Tech App](/screenshots/main.jpg "Ed Tech App")
 
 ## Getting Started
 
