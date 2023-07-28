@@ -32,5 +32,5 @@ const List<Course> coursesList = [
 const currentUser = User(
   name: "Abdullah Dheir",
   email: "abdullah.dheir@gmail.com",
-  course: coursesList,
+  courses: coursesList,
 );
