@@ -81,7 +81,7 @@ class ProfilePageContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Text(
-          "Your Courses",
+          text,
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 color: kDarkColor,
                 fontWeight: FontWeight.bold,
