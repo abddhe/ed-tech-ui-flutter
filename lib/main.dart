@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:ed_tech/constants.dart';
+import 'package:ed_tech/screens/course_details_screen.dart';
 import 'package:ed_tech/screens/home_screen.dart';
 import 'package:ed_tech/screens/login_screen.dart';
 import 'package:ed_tech/screens/onboarding_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.screenRoute: (context) => const LoginScreen(),
         SignupScreen.screenRoute: (context) => const SignupScreen(),
         HomeScreen.screenRoute: (context) => const HomeScreen(),
+        CourseDetailsScreen.screenRoute: (context) => const CourseDetailsScreen(),
       },
     );
   }
