@@ -26,7 +26,7 @@ class CoursePage extends StatelessWidget {
                       ),
                 ),
                 subtitle: Text(
-                  "Abdullah Dheir",
+                  currentUser.name,
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                         color: kDarkColor,
                         fontWeight: FontWeight.w900,
@@ -91,7 +91,7 @@ class CoursePage extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) =>
-                      CourseCard(course: coursesList[index]),
+                      CourseCard(course: currentUser.courses[index]),
                   itemCount: coursesList.length,
                 ),
               ),
