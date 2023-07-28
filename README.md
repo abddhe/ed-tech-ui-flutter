@@ -1,4 +1,4 @@
-# Ed Tech App
+# Ed Tech Application UI
 
 Is a education application introduce a many of course.
 
