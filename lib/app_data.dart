@@ -1,6 +1,7 @@
 import 'package:ed_tech/models/course.dart';
+import 'package:ed_tech/models/user.dart';
 
-final List<Course> coursesList = [
+const List<Course> coursesList = [
   Course(
       title: "UI",
       imageURL: "assets/images/UI.png",
@@ -27,3 +28,9 @@ final List<Course> coursesList = [
       category: "code",
       duration: "1 h 20 min"),
 ];
+
+const currentUser = User(
+  name: "Abdullah Dheir",
+  email: "abdullah.dheir@gmail.com",
+  course: coursesList,
+);
