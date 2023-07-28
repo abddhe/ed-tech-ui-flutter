@@ -21,9 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+      appBar: const AppBarWidget(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(

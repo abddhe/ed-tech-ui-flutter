@@ -17,7 +17,6 @@ class CourseDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBarWidget(
         title: course.title,
-        onPressed: () => Navigator.of(context).pop(),
       ),
       body: SafeArea(
         bottom: false,

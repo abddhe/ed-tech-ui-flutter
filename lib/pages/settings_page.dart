@@ -18,9 +18,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(
-        title: "Settings",
-      ),
+      appBar: AppBarWidget(title: "Settings", onPressed: () {}),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(kDefaultPadding),
@@ -67,7 +65,6 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   value: notificationsIsEnabled,
                   activeColor: kSuccessColor,
-
                   onChanged: (bool value) {
                     setState(() {
                       notificationsIsEnabled = value;

@@ -10,7 +10,10 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(title: "Profile",),
+      appBar: AppBarWidget(
+        title: "Profile",
+        onPressed: () {},
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(kDefaultPadding),
@@ -25,10 +28,7 @@ class ProfilePage extends StatelessWidget {
                   color: kLightGreyColor,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .secondary,
+                    color: Theme.of(context).colorScheme.secondary,
                     width: 5.0,
                   ),
                 ),
@@ -40,7 +40,10 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(
                 height: kDefaultPadding + 10,
               ),
-              ProfilePageContainer(text: "Your Courses", onPressed: () => Navigator.of(context).pushNamed(YourCoursesScreen.screenRoute)),
+              ProfilePageContainer(
+                  text: "Your Courses",
+                  onPressed: () => Navigator.of(context)
+                      .pushNamed(YourCoursesScreen.screenRoute)),
               ProfilePageContainer(text: "Saved", onPressed: () {}),
               ProfilePageContainer(text: "Payment", onPressed: () {}),
               TextButton(
@@ -50,13 +53,9 @@ class ProfilePage extends StatelessWidget {
                   },
                   child: Text(
                     'Logout',
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(
-                      color: kDarkGreyColor,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: kDarkGreyColor,
+                        ),
                   ))
             ],
           ),
@@ -90,14 +89,10 @@ class ProfilePageContainer extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: Theme
-              .of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(
-            color: kDarkColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                color: kDarkColor,
+                fontWeight: FontWeight.bold,
+              ),
         ),
       ),
     );
